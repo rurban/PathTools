@@ -1,5 +1,4 @@
 package Cwd;
-$VERSION = $VERSION = '3.01_01';
 
 =head1 NAME
 
@@ -156,7 +155,9 @@ L<File::chdir>
 
 use strict;
 use Exporter;
-use vars qw(@ISA @EXPORT @EXPORT_OK);
+use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
+
+$VERSION = '3.01_02';
 
 @ISA = qw/ Exporter /;
 @EXPORT = qw(cwd getcwd fastcwd fastgetcwd);
@@ -185,11 +186,18 @@ if ($^O eq 'os2') {
     return 1;
 }
 
-eval {
-    require XSLoader;
-    local $^W = 0;
-    XSLoader::load('Cwd');
-};
+
+if ( $] >= 5.006 ) {
+  require XSLoader;
+  XSLoader::load( __PACKAGE__, $VERSION );
+} else {
+  require DynaLoader;
+  push @ISA, 'DynaLoader';
+  __PACKAGE__->bootstrap( $VERSION );
+}
+
+# Must be after the DynaLoader stuff:
+$VERSION = eval $VERSION;
 
 # Big nasty table of function aliases
 my %METHOD_MAP =
@@ -339,7 +347,7 @@ sub getcwd
 # This is a faster version of getcwd.  It's also more dangerous because
 # you might chdir out of a directory that you can't chdir back into.
     
-sub fastcwd {
+sub fastcwd_ {
     my($odev, $oino, $cdev, $cino, $tdev, $tino);
     my(@path, $path);
     local(*DIR);
@@ -377,6 +385,7 @@ sub fastcwd {
 	if $cdev != $orig_cdev || $cino != $orig_cino;
     $path;
 }
+if (not defined &fastcwd) { *fastcwd = \&fastcwd_ }
 
 
 # Keeps track of current working directory in PWD environment var
@@ -568,6 +577,7 @@ sub fast_abs_path {
 	return fast_abs_path(File::Spec->catpath($vol, $dir, '')) . '/' . $file;
     }
 
+    local $ENV{PWD} = $ENV{PWD}; # Guard against clobberage
     if (!CORE::chdir($path)) {
  	_croak("Cannot chdir to $path: $!");
     }
@@ -672,7 +682,7 @@ sub _epoc_cwd {
 if (exists $METHOD_MAP{$^O}) {
   my $map = $METHOD_MAP{$^O};
   foreach my $name (keys %$map) {
-    no warnings;	# assignments trigger 'subroutine redefined' warning
+    local $^W = 0;  # assignments trigger 'subroutine redefined' warning
     no strict 'refs';
     *{$name} = \&{$map->{$name}};
   }

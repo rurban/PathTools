@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: PathTools
-version: 3.01_01
+version: 3.01_02
 author:
   - Maintained by Ken Williams <KWILLIAMS@cpan.org>
 abstract: get pathname of current working directory
@@ -8,7 +8,6 @@ license: perl
 requires:
   Carp: 0
   File::Basename: 0
-  XSLoader: 0
 build_requires:
   File::Path: 0
   Module::Build: 0.19
@@ -17,10 +16,10 @@ build_requires:
 provides:
   Cwd:
     file: Cwd.pm
-    version: 3.01_01
+    version: 3.01_02
   File::Spec:
     file: lib/File/Spec.pm
-    version: 3.01
+    version: 3.01_02
   File::Spec::Cygwin:
     file: lib/File/Spec/Cygwin.pm
     version: 1.1

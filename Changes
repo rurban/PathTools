@@ -1,6 +1,10 @@
 Revision history for Perl distribution PathTools.
 
-3.01_01  (beta for upcoming 3.02)  Thu Nov 18 22:23:46 CST 2004
+3.01_02  (beta for upcoming 3.02)  Sun Nov 28 22:12:27 CST 2004
+
+ - Fixed a testing bug in which sometimes the wrong version of Cwd
+   (the version already installed on the user's machine) would get
+   loaded instead of the one we're building & installing.
 
  - Sometimes getdcwd() returns a lower-case drive letter, so don't
    require an upper-case letter in t/win32.t. [Jan Dubois]
@@ -27,8 +31,15 @@ Revision history for Perl distribution PathTools.
    parser. [Craig A. Berry]
 
  - In order to remove a recursive dependency (PathTools -> Test-Simple
-   -> Test-Harness -> PathTools), we now use Test.pm rather than
-   Test::More.
+   -> Test-Harness -> PathTools), we now include a copy of Test::More in
+   the distribution.  It is only used for testing, it won't be installed
+   with the rest of the stuff.
+
+ - Removed some 5.6-isms from Cwd in order to get it to build with
+   older perls like 5.005.
+
+ - abs_path() on Windows was trampling on $ENV{PWD} - fixed. [Spotted
+   by Neil MacMullen]
 
 3.01  Mon Sep  6 22:28:06 CDT 2004
 
