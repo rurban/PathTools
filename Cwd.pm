@@ -1,5 +1,5 @@
 package Cwd;
-$VERSION = $VERSION = '3.01';
+$VERSION = $VERSION = '3.01_01';
 
 =head1 NAME
 
@@ -308,6 +308,7 @@ unless ($METHOD_MAP{$^O}{cwd} or defined &cwd) {
     # The pwd command is not available in some chroot(2)'ed environments
     my $sep = $Config::Config{path_sep} || ':';
     if( $^O eq 'MacOS' || (defined $ENV{PATH} &&
+			   $^O ne 'MSWin32' &&  # no pwd on Windows
 			   grep { -x "$_/pwd" } split($sep, $ENV{PATH})) )
     {
 	*cwd = \&_backtick_pwd;
@@ -651,7 +652,7 @@ sub _qnx_abs_path {
     my $path = @_ ? shift : '.';
     local *REALPATH;
 
-    open(REALPATH, '-|', '/usr/bin/fullpath', '-t', $path) or
+    defined( open(REALPATH, '-|') || exec '/usr/bin/fullpath', '-t', $path ) or
       die "Can't open /usr/bin/fullpath: $!";
     my $realpath = <REALPATH>;
     close REALPATH;

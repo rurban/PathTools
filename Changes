@@ -1,5 +1,35 @@
 Revision history for Perl distribution PathTools.
 
+3.01_01  (beta for upcoming 3.02)  Thu Nov 18 22:23:46 CST 2004
+
+ - Sometimes getdcwd() returns a lower-case drive letter, so don't
+   require an upper-case letter in t/win32.t. [Jan Dubois]
+
+ - Fixed a memory leak in getdcwd() on win32. [Steve Hay]
+
+ - Added a copy of ppport.h to the distribution to aid compilation on
+   older versions of perl. [Suggested by Charlie Root]
+
+ - Don't bother looking for a 'pwd' executable on MSWin32 - there
+   won't be one, and looking for it can be extremely slow when lots of
+   disks are mounted. [Several people, including Andrew Burke]
+
+ - Eliminated a multi-argument form of open() that was causing a
+   syntax error on older versions of perl. [Fixed by Michael Schwern]
+
+ - The bug-fix changes for revision 0.90 of File::Spec somehow were
+   lost when I merged it into the PathTools distribution.  They're
+   restored now. [Craig A. Berry]
+
+ - File::Spec->canonpath() will now reduce paths like '[d1.-]foo.dat'
+   down to '[000000]foo.dat' instead of '[]foo.dat' or 'foo.dat'.
+   This is in better accordance with the native filename syntax
+   parser. [Craig A. Berry]
+
+ - In order to remove a recursive dependency (PathTools -> Test-Simple
+   -> Test-Harness -> PathTools), we now use Test.pm rather than
+   Test::More.
+
 3.01  Mon Sep  6 22:28:06 CDT 2004
 
  - Removed an unnecessary and confusing dependency on File::Spec from

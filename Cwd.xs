@@ -1,6 +1,8 @@
 #include "EXTERN.h"
 #include "perl.h"
 #include "XSUB.h"
+#define NEED_sv_2pv_nolen
+#include "ppport.h"
 
 #ifdef I_UNISTD
 #   include <unistd.h>
@@ -427,11 +429,12 @@ PPCODE:
     New(0,dir,MAXPATHLEN,char);
     if (_getdcwd(drive, dir, MAXPATHLEN)) {
         sv_setpvn(TARG, dir, strlen(dir));
-        Safefree(dir);
         SvPOK_only(TARG);
     }
     else
         sv_setsv(TARG, &PL_sv_undef);
+
+    Safefree(dir);
 
     XSprePUSH; PUSHTARG;
 #ifndef INCOMPLETE_TAINTS

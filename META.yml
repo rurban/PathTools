@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: PathTools
-version: 3.01
+version: 3.01_01
 author:
   - Maintained by Ken Williams <KWILLIAMS@cpan.org>
 abstract: get pathname of current working directory
@@ -14,11 +14,10 @@ build_requires:
   Module::Build: 0.19
   Scalar::Util: 0
   Test: 0
-  Test::More: 0
 provides:
   Cwd:
     file: Cwd.pm
-    version: 3.01
+    version: 3.01_01
   File::Spec:
     file: lib/File/Spec.pm
     version: 3.01
@@ -46,4 +45,4 @@ provides:
   File::Spec::Win32:
     file: lib/File/Spec/Win32.pm
     version: 1.5
-generated_by: Module::Build version 0.25_01
+generated_by: Module::Build version 0.26
