@@ -17,12 +17,14 @@ use File::Path;
 use lib File::Spec->catdir('t', 'lib');
 use Test::More;
 
-my $tests = 27;
+my $tests = 28;
 # _perl_abs_path() currently only works when the directory separator
 # is '/', so don't test it when it won't work.
-my $EXTRA_ABSPATH_TESTS = ($Config{prefix} =~ m/\//);
+my $EXTRA_ABSPATH_TESTS = ($Config{prefix} =~ m/\//) && $^O ne 'cygwin';
 $tests += 4 if $EXTRA_ABSPATH_TESTS;
 plan tests => $tests;
+
+like $INC{'Cwd.pm'}, qr{blib}i, "Cwd should be loaded from blib/ during testing";
 
 my $IsVMS = $^O eq 'VMS';
 my $IsMacOS = $^O eq 'MacOS';
@@ -189,7 +191,7 @@ SKIP: {
     my $root = File::Spec->rootdir;
     local *FH;
     opendir FH, $root or skip("Can't opendir($root): $!", 2+$EXTRA_ABSPATH_TESTS);
-    ($file) = grep {-f $_} map File::Spec->catfile($root, $_), readdir FH;
+    ($file) = grep {-f $_ and not -l $_} map File::Spec->catfile($root, $_), readdir FH;
     closedir FH;
   }
   skip "No plain file in root directory to test with", 2+$EXTRA_ABSPATH_TESTS unless $file;
