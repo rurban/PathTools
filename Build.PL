@@ -1,5 +1,10 @@
 use Module::Build;
 
+my @compiler_flags;
+if ($] < 5.006 and Module::Build->y_n("Does your system define the getcwd() C library function?", 'y')) {
+  @compiler_flags = ('-DHAS_GETCWD');
+}
+
 my $class = Module::Build->subclass(code => <<'EOF');
 
   # See https://rt.cpan.org/NoAuth/Bug.html?id=4681 for why we add
@@ -33,6 +38,16 @@ my $class = Module::Build->subclass(code => <<'EOF');
     return { map {$_, $prereqs->{$_}} grep !/^Module::Build$/, keys %$prereqs };
   }
 
+  # Copy the ppport.h file to where it will be expected under Module::Build
+  sub ACTION_code {
+    my $self = shift;
+    my $ppp = 'ppport.h';
+    my $lib_ppp = File::Spec->catfile('lib', $ppp);
+    $self->copy_if_modified(from => $ppp, to => $lib_ppp);
+    $self->add_to_cleanup($lib_ppp);
+    $self->SUPER::ACTION_code(@_);
+  }
+
   # Make sure the two main $VERSION numbers agree.  This is just a
   # simple way of making sure both VERSIONs get updated with every release.
   sub ACTION_distdir {
@@ -50,6 +65,7 @@ EOF
 my $build = $class->new
   (
    dist_name => 'PathTools',
+   dist_abstract => 'Tools for working with paths and file specs across platforms',
    dist_version_from => 'Cwd.pm',
    license => 'perl',
    installdirs => 'core',
@@ -65,6 +81,7 @@ my $build = $class->new
 		      'Module::Build' => '0.19',
 		     },
    xs_files       => { 'Cwd.xs' => 'lib/Cwd.xs' },
+   extra_compiler_flags => \@compiler_flags,
    sign => 1,
   );
 

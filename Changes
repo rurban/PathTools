@@ -1,5 +1,21 @@
 Revision history for Perl distribution PathTools.
 
+3.04  Sun Feb  6 17:27:38 CST 2005
+
+ - For perls older than 5.006, the HAS_GETCWD symbol is not available,
+   because it wasn't checked for in older Configure scripts when perl
+   was built.  We therefore just ask the user whether the getcwd() C
+   function is defined on their platform when their perl is old.
+   Maybe in the future we'll try to automate this. [Reported by
+   several parties]
+
+ - Remove lib/ppport.h from the distribution, so that MakeMaker
+   doesn't accidentally pick it up and install it as a lib
+   file. [Jerry Hedden]
+
+ - Fixed a testing error on VMS that occurred when a user had
+   read-access to the root of the current volume. [Craig A. Berry]
+
 3.03  Fri Jan 21 21:44:05 CST 2005
 
  - Fixed a testing error if the first file we find in the root
