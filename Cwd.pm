@@ -155,9 +155,10 @@ This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 Portions of the C code in this library are copyright (c) 1994 by the
-Regents of the University of California.  All rights reserved.  Please
-see the source code in F<Cwd.xs> for the licensing details of that
-code.
+Regents of the University of California.  All rights reserved.  The
+license on this code is compatible with the licensing of the rest of
+the distribution - please see the source code in F<Cwd.xs> for the
+details.
 
 =head1 SEE ALSO
 
@@ -169,7 +170,7 @@ use strict;
 use Exporter;
 use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 
-$VERSION = '3.01_03';
+$VERSION = '3.02';
 
 @ISA = qw/ Exporter /;
 @EXPORT = qw(cwd getcwd fastcwd fastgetcwd);
@@ -471,7 +472,7 @@ sub chdir {
 }
 
 
-sub _perl_abs_path(;$)
+sub _perl_abs_path
 {
     my $start = @_ ? shift : '.';
     my($dotdots, $cwd, @pst, @cst, $dir, @tst);
@@ -501,7 +502,7 @@ sub _perl_abs_path(;$)
 	    return abs_path($link_target);
 	}
 	
-	return abs_path($dir) . '/' . $file;
+	return $dir ? abs_path($dir) . "/$file" : "/$file";
     }
 
     $cwd = '';
@@ -551,6 +552,7 @@ sub _perl_abs_path(;$)
 
 my $Curdir;
 sub fast_abs_path {
+    local $ENV{PWD} = $ENV{PWD} || ''; # Guard against clobberage
     my $cwd = getcwd();
     require File::Spec;
     my $path = @_ ? shift : ($Curdir ||= File::Spec->curdir);
@@ -580,10 +582,11 @@ sub fast_abs_path {
 	    return fast_abs_path($link_target);
 	}
 	
-	return fast_abs_path(File::Spec->catpath($vol, $dir, '')) . '/' . $file;
+	return $dir eq File::Spec->rootdir
+	  ? File::Spec->catpath($vol, $dir, $file)
+	  : fast_abs_path(File::Spec->catpath($vol, $dir, '')) . '/' . $file;
     }
 
-    local $ENV{PWD} = $ENV{PWD} || ''; # Guard against clobberage
     if (!CORE::chdir($path)) {
  	_croak("Cannot chdir to $path: $!");
     }
