@@ -147,6 +147,18 @@ Originally by the perl5-porters.
 
 Maintained by Ken Williams <KWILLIAMS@cpan.org>
 
+=head1 COPYRIGHT
+
+Copyright (c) 2004 by the Perl 5 Porters.  All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+Portions of the C code in this library are copyright (c) 1994 by the
+Regents of the University of California.  All rights reserved.  Please
+see the source code in F<Cwd.xs> for the licensing details of that
+code.
+
 =head1 SEE ALSO
 
 L<File::chdir>
@@ -157,7 +169,7 @@ use strict;
 use Exporter;
 use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 
-$VERSION = '3.01_02';
+$VERSION = '3.01_03';
 
 @ISA = qw/ Exporter /;
 @EXPORT = qw(cwd getcwd fastcwd fastgetcwd);
@@ -459,8 +471,6 @@ sub chdir {
 }
 
 
-# In case the XS version doesn't load.
-*abs_path = \&_perl_abs_path unless defined &abs_path;
 sub _perl_abs_path(;$)
 {
     my $start = @_ ? shift : '.';
@@ -539,10 +549,6 @@ sub _perl_abs_path(;$)
 }
 
 
-# added function alias for those of us more
-# used to the libc function.  --tchrist 27-Jan-00
-*realpath = \&abs_path;
-
 my $Curdir;
 sub fast_abs_path {
     my $cwd = getcwd();
@@ -577,7 +583,7 @@ sub fast_abs_path {
 	return fast_abs_path(File::Spec->catpath($vol, $dir, '')) . '/' . $file;
     }
 
-    local $ENV{PWD} = $ENV{PWD}; # Guard against clobberage
+    local $ENV{PWD} = $ENV{PWD} || ''; # Guard against clobberage
     if (!CORE::chdir($path)) {
  	_croak("Cannot chdir to $path: $!");
     }
@@ -688,5 +694,11 @@ if (exists $METHOD_MAP{$^O}) {
   }
 }
 
+# In case the XS version doesn't load.
+*abs_path = \&_perl_abs_path unless defined &abs_path;
+
+# added function alias for those of us more
+# used to the libc function.  --tchrist 27-Jan-00
+*realpath = \&abs_path;
 
 1;

@@ -1,6 +1,6 @@
 Revision history for Perl distribution PathTools.
 
-3.01_02  (beta for upcoming 3.02)  Sun Nov 28 22:12:27 CST 2004
+3.01_03  (beta for upcoming 3.02)  Mon Nov 29 20:29:09 CST 2004
 
  - Fixed a testing bug in which sometimes the wrong version of Cwd
    (the version already installed on the user's machine) would get
@@ -40,6 +40,9 @@ Revision history for Perl distribution PathTools.
 
  - abs_path() on Windows was trampling on $ENV{PWD} - fixed. [Spotted
    by Neil MacMullen]
+
+ - Added licensing/copyright statements to the POD in each .pm
+   file. [Spotted by Radoslaw Zielinski]
 
 3.01  Mon Sep  6 22:28:06 CDT 2004
 
