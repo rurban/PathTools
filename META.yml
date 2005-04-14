@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name: PathTools
-version: 3.05
+version: 3.06
 author:
   - Maintained by Ken Williams <KWILLIAMS@cpan.org>
 abstract: |-
@@ -17,10 +17,10 @@ build_requires:
 provides:
   Cwd:
     file: Cwd.pm
-    version: 3.05
+    version: 3.06
   File::Spec:
     file: lib/File/Spec.pm
-    version: 3.05
+    version: 3.06
   File::Spec::Cygwin:
     file: lib/File/Spec/Cygwin.pm
     version: 1.1
@@ -45,4 +45,4 @@ provides:
   File::Spec::Win32:
     file: lib/File/Spec/Win32.pm
     version: 1.5
-generated_by: Module::Build version 0.26
+generated_by: Module::Build version 0.2608
