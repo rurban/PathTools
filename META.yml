@@ -1,11 +1,13 @@
 --- #YAML:1.0
 name: PathTools
-version: 3.09
+version: 3.10
 author:
   - Maintained by Ken Williams <KWILLIAMS@cpan.org>
 abstract: |-
   Tools for working with paths and file specs across platforms
 license: perl
+resources:
+  license: http://dev.perl.org/licenses/
 requires:
   Carp: 0
   File::Basename: 0
@@ -17,10 +19,10 @@ build_requires:
 provides:
   Cwd:
     file: Cwd.pm
-    version: 3.09
+    version: 3.10
   File::Spec:
     file: lib/File/Spec.pm
-    version: 3.09
+    version: 3.10
   File::Spec::Cygwin:
     file: lib/File/Spec/Cygwin.pm
     version: 1.1
@@ -45,4 +47,4 @@ provides:
   File::Spec::Win32:
     file: lib/File/Spec/Win32.pm
     version: 1.5
-generated_by: Module::Build version 0.261
+generated_by: Module::Build version 0.2702
