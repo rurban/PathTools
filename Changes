@@ -1,5 +1,16 @@
 Revision history for Perl distribution PathTools.
 
+3.18  Thu Apr 27 22:01:38 CDT 2006
+
+ - Fixed some problems on VMS in which a directory called "0" would be
+   treated as a second-class citizen. [Peter (Stig) Edwards]
+
+ - Added a couple of regression tests to make sure abs2rel('/foo/bar',
+   '/') works as expected.  [Chia-liang Kao]
+
+ - Added a couple of regression tests to make sure catdir('/',
+   'foo/bar') works as expected.  [Mark Grimes]
+
 3.17  Fri Mar  3 16:52:30 CST 2006
 
  - The Cygwin version of Cwd::cwd() will croak if given any arguments
