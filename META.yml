@@ -1,6 +1,6 @@
 ---
 name: PathTools
-version: 3.18
+version: 3.19
 author:
   - 'Maintained by Ken Williams <KWILLIAMS@cpan.org>'
 abstract: Tools for working with paths and file specs across platforms
@@ -15,13 +15,14 @@ build_requires:
   Module::Build: 0.19
   Scalar::Util: 0
   Test: 0
+dynamic_config: 1
 provides:
   Cwd:
     file: Cwd.pm
-    version: 3.18
+    version: 3.19
   File::Spec:
     file: lib/File/Spec.pm
-    version: 3.18
+    version: 3.19
   File::Spec::Cygwin:
     file: lib/File/Spec/Cygwin.pm
     version: 1.1
@@ -46,7 +47,7 @@ provides:
   File::Spec::Win32:
     file: lib/File/Spec/Win32.pm
     version: 1.6
-generated_by: Module::Build version 0.271
+generated_by: Module::Build version 0.2801
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
