@@ -3,7 +3,7 @@ package File::Spec::Unix;
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '3.25_01';
+$VERSION = '3.26';
 
 =head1 NAME
 
@@ -476,7 +476,7 @@ L<File::Spec>
 # File::Spec subclasses use this.
 sub _cwd {
     require Cwd;
-    Cwd::cwd();
+    Cwd::getcwd();
 }
 
 

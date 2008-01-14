@@ -359,16 +359,17 @@ if ($^O eq 'MacOS') {
 [ "VMS->splitdir('[]')",          ''          ],
 [ "VMS->splitdir('d1.d2.d3')",    'd1,d2,d3'  ],
 [ "VMS->splitdir('[d1.d2.d3]')",  'd1,d2,d3'  ],
-[ "VMS->splitdir('.d1.d2.d3')",   ',d1,d2,d3' ],
-[ "VMS->splitdir('[.d1.d2.d3]')", ',d1,d2,d3' ],
-[ "VMS->splitdir('.-.d2.d3')",    ',-,d2,d3'  ],
-[ "VMS->splitdir('[.-.d2.d3]')",  ',-,d2,d3'  ],
+[ "VMS->splitdir('.d1.d2.d3')",   'd1,d2,d3' ],
+[ "VMS->splitdir('[.d1.d2.d3]')", 'd1,d2,d3' ],
+[ "VMS->splitdir('.-.d2.d3')",    '-,d2,d3'  ],
+[ "VMS->splitdir('[.-.d2.d3]')",  '-,d2,d3'  ],
 [ "VMS->splitdir('[d1.d2]')",  		'd1,d2'  ],
 [ "VMS->splitdir('[d1-.--d2]')",  	'd1-,--d2'  ],
 [ "VMS->splitdir('[d1---.-.d2]')",  	'd1---,-,d2'  ],
 [ "VMS->splitdir('[d1.---.d2]')",  	'd1,-,-,-,d2'  ],
 [ "VMS->splitdir('[d1---d2]')",  	'd1---d2'  ],
 [ "VMS->splitdir('[d1.][000000.d2]')",  'd1,d2'  ],
+[ "VMS->splitdir('[.d1.d2^.d3]')", 'd1,d2^.d3' ],
 
 [ "VMS->catdir('')",                                                      ''                 ],
 [ "VMS->catdir('d1','d2','d3')",                                          '[.d1.d2.d3]'         ],
@@ -694,6 +695,7 @@ if ($^O eq 'MacOS') {
 [ "Cygwin->rel2abs('..','/t1/t2/t3')",             '/t1/t2/t3/..'    ],
 [ "Cygwin->rel2abs('../t4','/t1/t2/t3')",          '/t1/t2/t3/../t4' ],
 [ "Cygwin->rel2abs('/t1','/t1/t2/t3')",            '/t1'             ],
+[ "Cygwin->rel2abs('//t1/t2/t3','/foo')",          '//t1/t2/t3'      ],
 
 ) ;
 

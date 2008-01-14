@@ -171,7 +171,7 @@ use strict;
 use Exporter;
 use vars qw(@ISA @EXPORT @EXPORT_OK $VERSION);
 
-$VERSION = '3.25_01';
+$VERSION = '3.26';
 
 @ISA = qw/ Exporter /;
 @EXPORT = qw(cwd getcwd fastcwd fastgetcwd);
@@ -540,8 +540,8 @@ sub _perl_abs_path
 	local *PARENT;
 	unless (opendir(PARENT, $dotdots))
 	{
-	    _carp("opendir($dotdots): $!");
-	    return '';
+	    # probably a permissions issue.  Try the native command.
+	    return File::Spec->rel2abs( $start, _backtick_pwd() );
 	}
 	unless (@cst = stat($dotdots))
 	{
@@ -644,11 +644,38 @@ sub _vms_cwd {
 
 sub _vms_abs_path {
     return $ENV{'DEFAULT'} unless @_;
+    my $path = shift;
+
+    if (-l $path) {
+        my $link_target = readlink($path);
+        die "Can't resolve link $path: $!" unless defined $link_target;
+	    
+        return _vms_abs_path($link_target);
+    }
+
+    if (defined &VMS::Filespec::vms_realpath) {
+        my $path = $_[0];
+        if ($path =~ m#(?<=\^)/# ) {
+            # Unix format
+            return VMS::Filespec::vms_realpath($path);
+        }
+
+	# VMS format
+
+	my $new_path = VMS::Filespec::vms_realname($path); 
+
+	# Perl expects directories to be in directory format
+	$new_path = VMS::Filespec::pathify($new_path) if -d $path;
+	return $new_path;
+    }
+
+    # Fallback to older algorithm if correct ones are not
+    # available.
 
     # may need to turn foo.dir into [.foo]
-    my $path = VMS::Filespec::pathify($_[0]);
-    $path = $_[0] unless defined $path;
-
+    my $pathified = VMS::Filespec::pathify($path);
+    $path = $pathified if defined $pathified;
+	
     return VMS::Filespec::rmsexpand($path);
 }
 

@@ -4,7 +4,7 @@ use strict;
 use vars qw(@ISA $VERSION);
 require File::Spec::Unix;
 
-$VERSION = '3.25_01';
+$VERSION = '3.26';
 
 @ISA = qw(File::Spec::Unix);
 
@@ -56,7 +56,7 @@ sub catdir {
     return unless @_;
 
     # Don't create something that looks like a //network/path
-    if ($_[0] eq '/' or $_[0] eq '\\') {
+    if ($_[0] and ($_[0] eq '/' or $_[0] eq '\\')) {
         shift;
         return $self->SUPER::catdir('', @_);
     }
@@ -112,10 +112,21 @@ Default: 1
 =cut
 
 sub case_tolerant () {
-  if ($^O ne 'cygwin') {
-    return 1;
+  return 1 unless $^O eq 'cygwin'
+    and defined &Cygwin::mount_flags;
+
+  my $drive = shift;
+  if (! $drive) {
+      my @flags = split(/,/, Cygwin::mount_flags('/cygwin'));
+      my $prefix = pop(@flags);
+      if (! $prefix || $prefix eq 'cygdrive') {
+          $drive = '/cygdrive/c';
+      } elsif ($prefix eq '/') {
+          $drive = '/c';
+      } else {
+          $drive = "$prefix/c";
+      }
   }
-  my $drive = shift || "/cygdrive/c";
   my $mntopts = Cygwin::mount_flags($drive);
   if ($mntopts and ($mntopts =~ /,managed/)) {
     return 0;
