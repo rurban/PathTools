@@ -1,0 +1,53 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 1197012d986a400414e13e25d519db39d392c730 Build.PL
+SHA1 01c4e5fd8643c35ed8a7f690eda85e6480f3614f Changes
+SHA1 dafcc38fa616d937fbf2fd511b02aa7abf7f59f0 Cwd.pm
+SHA1 9691a4713c8ad848302b29bec74ca1652ef55ab1 Cwd.xs
+SHA1 ac6246562c365a8ad62f910ef31ce514d5a7e292 INSTALL
+SHA1 58c981892283d338e23971c5926089e0a6812caf MANIFEST
+SHA1 8078245ce9a9fbd6c86cf2dc38ea291ce096c784 META.yml
+SHA1 3fb144a9fe45192b55f0b2950c7074241b4f4aa8 Makefile.PL
+SHA1 8d32bec3db1b74a87ce4fe227a63365072e61ce1 lib/File/Spec.pm
+SHA1 f929b8f8098de19bed2fc90da12eb48c3d215b3b lib/File/Spec/Cygwin.pm
+SHA1 8cc1639b561a544c893cfd4691cd9679f0c544d0 lib/File/Spec/Epoc.pm
+SHA1 62a17ab30b591e0b2a907c01ee29dcca9f4c294e lib/File/Spec/Functions.pm
+SHA1 4ce94e88eb527ddc43f57299d7e37cf60f32f366 lib/File/Spec/Mac.pm
+SHA1 f9d9d196b346edc2f4a88d78ba1bd8c4a8e366ae lib/File/Spec/OS2.pm
+SHA1 ad9807977f6e1617f2b8167a982074dc148dcc4d lib/File/Spec/Unix.pm
+SHA1 3ee2da4e4df361d35a61bb1bd67eef601ac9fa7a lib/File/Spec/VMS.pm
+SHA1 6df9bef58f0d93004610ccc824a1b0831fcbb3b9 lib/File/Spec/Win32.pm
+SHA1 985bfff322df915f46b27f12e84b5674db9ad8a5 ppport.h
+SHA1 77d045c1404fbe4c0910ed986b286f7b7b7d560d t/Functions.t
+SHA1 8cad7c6b3037360884d7d8c265253387e56a587a t/Spec.t
+SHA1 88e00161e3c3108009dfba94ca64146badeceb7e t/crossplatform.t
+SHA1 9862a3f294bb4a7d372cea0df551afa0f7a58177 t/cwd.t
+SHA1 220a2b1de7f23aedf2f9daba53238c3d0b06db63 t/lib/Test/Builder.pm
+SHA1 0bac03ea869f3ae55a84fa25ac0754c9e0c0f86d t/lib/Test/More.pm
+SHA1 706f1f8f3b928c91a7d70f476fd3f62d2055ac1c t/lib/Test/Simple.pm
+SHA1 23537c5ecebd2e0fefa6986c106b994f5d1c8e7a t/lib/Test/Tutorial.pod
+SHA1 1eb98918332df0f2c7e76f8e17b74b03851cd8e6 t/rel2abs2rel.t
+SHA1 3069528f07a6835dd076ec6831a2a6327b09483e t/taint.t
+SHA1 7e845682c82fff7d3fc35240b3dcd30ecb3bbc01 t/tmpdir.t
+SHA1 9e5be2014f97483e76636bcbeb591392b0d68d16 t/win32.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.5 (Darwin)
+
+iD8DBQFHjrtygrvMBLfvlHYRAva0AKCNvbOLEBW+qG9rVOVhzNLq4tP8gQCgnem3
+GwaMAEHonRZ114sktKTfuQw=
+=/K8l
+-----END PGP SIGNATURE-----

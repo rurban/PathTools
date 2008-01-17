@@ -28,3 +28,4 @@ t/Spec.t
 t/taint.t
 t/tmpdir.t
 t/win32.t
+SIGNATURE    Added here by Module::Build
