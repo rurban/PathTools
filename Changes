@@ -1,5 +1,20 @@
 Revision history for Perl distribution PathTools.
 
+ - Fixed and clarified the behavior of splitpath() with a $no_file
+   argument on VMS.  [Craig A. Berry, Peter Edwards]
+
+ - Removed some function prototypes and other Perl::Critic violations.
+
+ - canonpath() and catdir() and catfile() on Win32 now make an
+   explicit (and unnecessary) copy of their arguments right away,
+   because apparently if we don't, we sabotage all of Win32dom. [RT
+   #33675]
+
+ - The Makefile.PL now has 'use 5.005;' to explicitly show what
+   minimum version of perl we support. [Spotted by Alexandr Ciornii]
+
+3.2701 - Mon Feb 11 21:43:51 2008
+
  - Fixed an edge case for Win32 catdir('C:', 'foo') and catfile('C:',
    'foo.txt') (which the caller's not really supposed to do, that's
    what catpath() is for) that changed between versions.  Now we're
