@@ -14,23 +14,23 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 1197012d986a400414e13e25d519db39d392c730 Build.PL
-SHA1 d5f0c21b46f455c178d86684ba955385de3331d1 Changes
-SHA1 c6ab3512f4f28397083bb73494109d8e039b54ae Cwd.pm
+SHA1 4247c5f0eb1cc9fa86f32fb1fa61fcd93d0c72fd Build.PL
+SHA1 ca52de398dc2ab7b917b86594806c90d9fa6f6d1 Changes
+SHA1 4c3eeafbd7341b7cb44881fca3b0ca5ee857072b Cwd.pm
 SHA1 9691a4713c8ad848302b29bec74ca1652ef55ab1 Cwd.xs
 SHA1 ac6246562c365a8ad62f910ef31ce514d5a7e292 INSTALL
 SHA1 58c981892283d338e23971c5926089e0a6812caf MANIFEST
-SHA1 dd4bbb9f3f4ad5c1fcdb01e022bb5f9acb9ce3f8 META.yml
+SHA1 e82451b71bb16175e33151b1a63d7fd9d072e932 META.yml
 SHA1 426740fd23a65327b681e2b3b03246ea2bebddc7 Makefile.PL
-SHA1 2a4607aaf034ceaa9213632fdce2577c3ad09223 lib/File/Spec.pm
-SHA1 a3b2c6ccb218716aa2e4435245eadf9eacd71ecd lib/File/Spec/Cygwin.pm
-SHA1 cbc99426f70d66d8e1df73899c6d506264ff4771 lib/File/Spec/Epoc.pm
-SHA1 29f530d673dede46571c24d616e5cfc03ee6f980 lib/File/Spec/Functions.pm
-SHA1 44cf7caec2db1f58e607e0bf9e29baf880197485 lib/File/Spec/Mac.pm
-SHA1 3e19281421846a2e282d49c8a6e4ea13f41ecbc7 lib/File/Spec/OS2.pm
-SHA1 eb578bea8fd1f9b4b4cff63f486859b13525a72e lib/File/Spec/Unix.pm
-SHA1 b53ec3a2fb88c1442f0092e2d435441cc2cbd2c8 lib/File/Spec/VMS.pm
-SHA1 292b6903d06ba33e9eea182e737fe241b7e0412c lib/File/Spec/Win32.pm
+SHA1 d0fc72fc5752e9dfddf433df05751369fdf2afeb lib/File/Spec.pm
+SHA1 7d4d5977a517a7548b8c4e39e9c9a3149e136343 lib/File/Spec/Cygwin.pm
+SHA1 1d35b3a416d147e4c31368beaa000d2076f564c0 lib/File/Spec/Epoc.pm
+SHA1 f9fdec25e94c098a0d7b70938ec7f3a6aa42e45c lib/File/Spec/Functions.pm
+SHA1 f5a493c9e17513b735b00541258319f55d070b35 lib/File/Spec/Mac.pm
+SHA1 a14aa3a0694d8666163a6d2249ccfc3485ddf735 lib/File/Spec/OS2.pm
+SHA1 67eb4aaa47230b80fe853defb0b65264ab382deb lib/File/Spec/Unix.pm
+SHA1 c51824195108a4cf420fccb7698ec9f3e816ae9b lib/File/Spec/VMS.pm
+SHA1 ecb96b2673b88bf1cf0cfc4885304cd8b074e9e2 lib/File/Spec/Win32.pm
 SHA1 985bfff322df915f46b27f12e84b5674db9ad8a5 ppport.h
 SHA1 77d045c1404fbe4c0910ed986b286f7b7b7d560d t/Functions.t
 SHA1 0b0034cbc17608b24ba5ad3dd28274499a63a386 t/Spec.t
@@ -45,9 +45,9 @@ SHA1 3069528f07a6835dd076ec6831a2a6327b09483e t/taint.t
 SHA1 7e845682c82fff7d3fc35240b3dcd30ecb3bbc01 t/tmpdir.t
 SHA1 efc50b18fda48ab82d50b119eaef355b6be5f17f t/win32.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.5 (Darwin)
+Version: GnuPG v1.4.6 (GNU/Linux)
 
-iD8DBQFIiolKgrvMBLfvlHYRAuQYAJ962bulJ+rDsbSuyq6oFwPAC2UVfQCgha3w
-2/yItDCIRCgj7BFnZQL4fz4=
-=VYhv
+iD8DBQFJBhURZCuimE51gxcRArdVAJ9icBfBgmR/K2wnTwdfiS6GLTukjgCfYLt0
+Q4OEo95OoNPV/uGg08s3Mac=
+=9R2N
 -----END PGP SIGNATURE-----
