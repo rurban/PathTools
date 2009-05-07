@@ -1,5 +1,15 @@
 Revision history for Perl distribution PathTools.
 
+3.29_01 - Thu May  7 20:22:00 2009
+
+- Minor fixes for QNX6. [Sean Boudreau]
+
+- Update to support VMS in Unix compatible mode and/or file names using
+  extended character sets. (RT #42154) [John Malmberg]
+
+- VMS support for Unix and extended file specifications in File::Spec
+  (RT #42153) [John Malmberg]
+
 3.29 - Wed Oct 29 20:48:11 2008
 
 - Promote to stable release.
