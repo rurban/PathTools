@@ -1,25 +1,56 @@
---- #YAML:1.0
-name:               PathTools
-version:            3.33
-abstract:           ~
-author:  []
-license:            unknown
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+---
+abstract: 'Tools for working with paths and file specs across platforms'
+author:
+  - 'Maintained by Ken Williams <KWILLIAMS@cpan.org>'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:
-    Carp:            0
-    File::Basename:  0
-    File::Path:      0
-    Scalar::Util:    0
-    Test:            0
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
+  ExtUtils::CBuilder: 0
+  Module::Build: 0.19
+  Scalar::Util: 0
+  Test: 0
+configure_requires:
+  Module::Build: 0.38
+dynamic_config: 1
+generated_by: 'Module::Build version 0.38, CPAN::Meta::Converter version 2.112150'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: PathTools
+provides:
+  Cwd:
+    file: Cwd.pm
+    version: 3.39_01
+  File::Spec:
+    file: lib/File/Spec.pm
+    version: 3.39_01
+  File::Spec::Cygwin:
+    file: lib/File/Spec/Cygwin.pm
+    version: 3.39_01
+  File::Spec::Epoc:
+    file: lib/File/Spec/Epoc.pm
+    version: 3.39_01
+  File::Spec::Functions:
+    file: lib/File/Spec/Functions.pm
+    version: 3.39_01
+  File::Spec::Mac:
+    file: lib/File/Spec/Mac.pm
+    version: 3.39_01
+  File::Spec::OS2:
+    file: lib/File/Spec/OS2.pm
+    version: 3.39_01
+  File::Spec::Unix:
+    file: lib/File/Spec/Unix.pm
+    version: 3.39_01
+  File::Spec::VMS:
+    file: lib/File/Spec/VMS.pm
+    version: 3.39_01
+  File::Spec::Win32:
+    file: lib/File/Spec/Win32.pm
+    version: 3.39_01
+requires:
+  Carp: 0
+  File::Basename: 0
+  perl: 5.005
+resources:
+  license: http://dev.perl.org/licenses/
+version: 3.39_01
