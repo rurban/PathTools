@@ -1,12 +1,168 @@
-Revision history for Perl distribution PathTools.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Changes - metacpan.org</title><link rel="alternate" type="application/rss+xml" title="RSS" href="http://metacpan.org/feed/distribution/PathTools" />
+  <link href="/_asset/08ce4d951f390d9feec9534497e9891c.css" rel="stylesheet" type="text/css">
+  <link rel="search" href="/static/opensearch.xml" type="application/opensearchdescription+xml" title="MetaCPAN">
+  <link rel="shortcut icon" href="/static/icons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="152x152" href="/static/icons/apple-touch-icon.png">
+  <script src="/_asset/e7a05fb9e6878d72f16521bff9b60cda.js" type="text/javascript"></script>
+
+  
+  <link href="/_asset_less/4ffa56a62d80712493cb88ff00d83de4.css" rel="stylesheet" type="text/css">
+  
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-27829474-1']);
+  _gaq.push(['_setDomainName', 'metacpan.org']);
+  _gaq.push(['_setSiteSpeedSampleRate', 100]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  </script>
+
+
+
+</head>
+<body>
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="btn btn-navbar btn-slidepanel" data-toggle="slidepanel" data-target=".slidepanel">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <ul class="nav">
+          <li class="">
+            <a href="/">Home</a>
+          </li>
+          <li class="">
+            <a href="/recent">Recent</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="/about/faq">FAQ</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="https://github.com/CPAN-API/metacpan-web/issues">Feedback</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="/news">News</a>
+          </li>
+          <li class="hidden-phone">
+            <a href="/lab">Lab</a>
+          </li>
+        </ul>
+        <ul class="nav pull-right">
+          <li class="dropdown pull-left">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Sign in
+                  <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=facebook" onclick="return logInPAUSE(this)">Facebook</a>
+                </li>
+                <li>
+                  <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=github" onclick="return logInPAUSE(this)">GitHub</a>
+                </li>
+                <li>
+                  <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=twitter" onclick="return logInPAUSE(this)">Twitter</a>
+                </li>
+                <li>
+                  <a href="https://api.metacpan.org/oauth2/authorize?client_id=metacpan.org&amp;choice=google" onclick="return logInPAUSE(this)">Google</a>
+                </li>
+              </ul>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    
+    <div class="row hidden-phone">
+      <div class="span3">
+        <a href="/" class="small-logo"></a>
+      </div>
+      <div class="span6">
+        <form action="/search" class="form-inline search-form">
+          <div class="input-append">
+            <input type="text" name="q" size="41" id="search-input" class="input-xlarge span5" value="">
+            <button class="btn" type="submit">Search</button>
+          </div><br>
+          <small class="smaller">
+            &nbsp;
+          </small>
+        </form>
+      </div>
+    </div>
+    
+    <div class="row-fluid">
+      <div class="span12">
+      
+<strong><big>
+    <a href="/source/SMUELLER/PathTools-3.40">SMUELLER / PathTools-3.40</a>
+    
+    
+      / Changes
+    
+  </big></strong><br><br>
+
+<ul class="nav nav-list slidepanel">
+  <li class="visible-phone search">
+    <form action="/search">
+      <input type="search" placeholder="Search" name="q"><input type="submit" class="hidden">
+    </form>
+  </li>
+  <li class="nav-header">Tools</li>
+  <li>
+    <div>
+      <a href="/release/SMUELLER/PathTools-3.40/">Release Info</a>
+    </div>
+  </li>
+  
+  <li>
+    <div>
+      <a href="/author/SMUELLER/">Author</a>
+    </div>
+  </li>
+  <li>&nbsp;</li>
+  <li><div><a href="http://api.metacpan.org/source/SMUELLER/PathTools-3.40/Changes">Raw code</a></div></li>
+  <li>
+    <div>
+      <a href="/raw/SMUELLER/PathTools-3.40/Changes?download=1">Download</a>
+    </div>
+  </li>
+  
+  <li><div><a href="javascript:togglePod([])">Toggle pod</a></div></li>
+  
+  <li class="nav-header">Info</li>
+  <li>626 lines of code</li>
+  <li>0 lines of pod</li>
+  <li>33.59K bytes</li>
+</ul>
+
+<div class="content">
+
+<pre class="brush: cpanchanges; class-name: 'highlight'; toolbar: false;" id="source">Revision history for Perl distribution PathTools.
 
 3.40 - Wed Jan 16 07:30:00 2013
 - Stop inadvertently skipping Spec.t on VMS. (Craig Berry)
 - Rethink EFS in File::Spec::VMS. (Craig Berry)
-- File::Spec::UNIX->abs2rel() gets it wrong with ".." components
+- File::Spec::UNIX-&gt;abs2rel() gets it wrong with &quot;..&quot; components
   [perl #111510] (Volker Schatz)
 - Add C define to remove taint support from perl (Steffen Mueller)
-- Remove "register" declarations as they are no longer
+- Remove &quot;register&quot; declarations as they are no longer
   useful (Karl Williamson)
 - Add test for fast_abs_path in LF dir
   [perl #115962] (Father Chrysostomos)
@@ -14,7 +170,7 @@ Revision history for Perl distribution PathTools.
   directories (Joel Berger)
 
 3.39_01 - Tue Dec 20 08:30:00 2011
-- [perl #51562] Problem & "solution" for building 5.10.0 with
+- [perl #51562] Problem &amp; &quot;solution&quot; for building 5.10.0 with
   win32+mingw+dmake (kmx)
 - Fix various compiler warnings from XS code (Zefram)
 - Fix typos (spelling errors) (Peter J. Acklam)
@@ -56,7 +212,7 @@ Revision history for Perl distribution PathTools.
 
 3.31_02 - Fri Jul 23 20:00:00 2010
 
-- Add TODO test for File::Spec->rel2abs() when under a symlink.
+- Add TODO test for File::Spec-&gt;rel2abs() when under a symlink.
 - Make catpath return an empty directory rather than the current
   directory if the directory name is empty.  This allows catpath
   to play nice with non-rooted logical names, as in
@@ -79,7 +235,7 @@ Revision history for Perl distribution PathTools.
 3.30_01 - Mon Sep 21 14:39:00 2009
 
 - Merge changes from core perl.
-  (Mostly changes regarding the lib->ext migration)
+  (Mostly changes regarding the lib-&gt;ext migration)
 
 3.30 - Sun May 10 10:55:00 2009
 
@@ -107,7 +263,7 @@ Revision history for Perl distribution PathTools.
 3.28_02 - Mon Oct 27 20:13:11 2008
 
  - Fixed some issues on QNX/NTO related to paths with double
-   slashes. [Matt Kraai & Nicholas Clark]
+   slashes. [Matt Kraai &amp; Nicholas Clark]
 
 3.28_01 - Fri Jul 25 21:18:11 2008
 
@@ -143,7 +299,7 @@ Revision history for Perl distribution PathTools.
 3.26 - Sun Jan 13 21:59:20 2008
 
  - case_tolerant() on Cygwin will now avoid a painful death when
-   Cygwin::mount_flags() isn't defined, as is the case for perl <
+   Cygwin::mount_flags() isn't defined, as is the case for perl &lt;
    5.10.  It will now just return 1, which is what it always did
    before it got so smart. [Spotted by Emanuele Zeppieri]
 
@@ -238,7 +394,7 @@ Revision history for Perl distribution PathTools.
 
 3.21 - Wed Oct  4 21:16:43 2006
 
- - Added a bunch of X<> tags to the File::Spec docs to help
+ - Added a bunch of X&lt;&gt; tags to the File::Spec docs to help
    podindex. [Gabor Szabo]
 
  - On Win32, abs2rel('C:\one\two\t\foo', 't\bar') should return
@@ -267,13 +423,13 @@ Revision history for Perl distribution PathTools.
    to replace an in-use Cwd shared library, but previous versions
    don't. [Suggested by Adam Kennedy]
 
- - Fixed File::Spec::Win32->canonpath('foo/../bar'), which was
+ - Fixed File::Spec::Win32-&gt;canonpath('foo/../bar'), which was
    returning \bar, and now properly returns just bar. [Spotted by
    Heinrich Tegethoff]
 
 3.18  Thu Apr 27 22:01:38 CDT 2006
 
- - Fixed some problems on VMS in which a directory called "0" would be
+ - Fixed some problems on VMS in which a directory called &quot;0&quot; would be
    treated as a second-class citizen. [Peter (Stig) Edwards]
 
  - Added a couple of regression tests to make sure abs2rel('/foo/bar',
@@ -285,7 +441,7 @@ Revision history for Perl distribution PathTools.
 3.17  Fri Mar  3 16:52:30 CST 2006
 
  - The Cygwin version of Cwd::cwd() will croak if given any arguments
-   (which can happen if, for example, it's called as Cwd->cwd).  Since
+   (which can happen if, for example, it's called as Cwd-&gt;cwd).  Since
    that croaking is bad, we now wrap the original cwd() in a
    subroutine that ignores its arguments.  We could skip this wrapping
    if a future version of perl changes cygwin.c's cwd() to not barf
@@ -303,8 +459,8 @@ Revision history for Perl distribution PathTools.
  - Apparently the version of File::Path that ships with perl 5.8.5
    (and perhaps others) calls Cwd::getcwd() with an argument (perhaps
    as a method?), which causes it to die with a prototyping error.
-   We've eliminated the prototype by using the "(...)" arglist, since
-   "PROTOTYPE: DISABLE" for the function didn't seem to work. [Spotted
+   We've eliminated the prototype by using the &quot;(...)&quot; arglist, since
+   &quot;PROTOTYPE: DISABLE&quot; for the function didn't seem to work. [Spotted
    by Eamon Daly and others]
 
 3.15  Tue Dec 27 14:17:39 CST 2005
@@ -327,7 +483,7 @@ Revision history for Perl distribution PathTools.
    fixed. [Reported by Bryan Daimler]
 
  - In abs2rel() on VMS, we've fixed handling of directory trees so
-   that the test $file = File::Spec::VMS->abs2rel('[t1.t2.t3]file',
+   that the test $file = File::Spec::VMS-&gt;abs2rel('[t1.t2.t3]file',
    '[t1.t2.t3]') returns 'file' instead of an empty string. [John
    E. Malmberg]
 
@@ -340,12 +496,12 @@ Revision history for Perl distribution PathTools.
    //double/slash at the beginning of a pathname on platforms where
    that means something special.  It used to check the value of $^O
    rather than the classname it was called as, which meant that
-   calling File::Spec::Cygwin->canonpath() didn't act like cygwin
+   calling File::Spec::Cygwin-&gt;canonpath() didn't act like cygwin
    unless you were actually *on* cygwin.  Now it does.
 
  - Fixed a major bug on Cygwin in which catdir() could sometimes
    create things that look like //network/paths in cases when it
-   shouldn't (e.g. catdir("/", "foo", "bar")).
+   shouldn't (e.g. catdir(&quot;/&quot;, &quot;foo&quot;, &quot;bar&quot;)).
 
 3.13  Tue Nov 15 23:50:37 CST 2005
 
@@ -384,7 +540,7 @@ Revision history for Perl distribution PathTools.
    MakeMaker. [Michael Schwern]
 
  - canonpath() on Win32 now collapses foo/.. (or foo\..) sections
-   correctly, rather than doing the "misguided" work it was previously
+   correctly, rather than doing the &quot;misguided&quot; work it was previously
    doing.  Note that canonpath() on Unix still does NOT collapse these
    sections, as doing so would be incorrect.  [Michael Schwern]
 
@@ -413,7 +569,7 @@ Revision history for Perl distribution PathTools.
  - Fixed a bug in which the special perl variable $^O would become
    tainted under certain versions of perl. [Michael Schwern]
 
- - File::Spec->rootdir() was returning / on Win32.  Now it returns \ .
+ - File::Spec-&gt;rootdir() was returning / on Win32.  Now it returns \ .
    [Michael Schwern]
 
  - We now avoid modifying @_ in tmpdir() when it's not strictly
@@ -431,7 +587,7 @@ Revision history for Perl distribution PathTools.
    foo/../bar sections.
 
  - The internal-only function bsd_realpath() in the XS file now uses
-   normal arg syntax instead of K&R syntax. [Nicholas Clark]
+   normal arg syntax instead of K&amp;R syntax. [Nicholas Clark]
 
 3.05  Mon Feb 28 07:22:58 CST 2005
 
@@ -489,7 +645,7 @@ Revision history for Perl distribution PathTools.
 
  - Fixed a testing bug in which sometimes the wrong version of Cwd
    (the version already installed on the user's machine) would get
-   loaded instead of the one we're building & installing.
+   loaded instead of the one we're building &amp; installing.
 
  - Sometimes getdcwd() returns a lower-case drive letter, so don't
    require an upper-case letter in t/win32.t. [Jan Dubois]
@@ -510,13 +666,13 @@ Revision history for Perl distribution PathTools.
    lost when I merged it into the PathTools distribution.  They're
    restored now. [Craig A. Berry]
 
- - File::Spec->canonpath() will now reduce paths like '[d1.-]foo.dat'
+ - File::Spec-&gt;canonpath() will now reduce paths like '[d1.-]foo.dat'
    down to '[000000]foo.dat' instead of '[]foo.dat' or 'foo.dat'.
    This is in better accordance with the native filename syntax
    parser. [Craig A. Berry]
 
- - In order to remove a recursive dependency (PathTools -> Test-Simple
-   -> Test-Harness -> PathTools), we now include a copy of Test::More in
+ - In order to remove a recursive dependency (PathTools -&gt; Test-Simple
+   -&gt; Test-Harness -&gt; PathTools), we now include a copy of Test::More in
    the distribution.  It is only used for testing, it won't be installed
    with the rest of the stuff.
 
@@ -554,7 +710,7 @@ The revision history for File::Spec is further below.
 
 Cwd 2.21  Tue Aug 31 22:50:14 CDT 2004
 
- - Removed "NO_META" from the Makefile.PL, since I'm not building the
+ - Removed &quot;NO_META&quot; from the Makefile.PL, since I'm not building the
    distribution with MakeMaker anyway.  [Rohan Carly]
 
  - Only test _perl_abs_path() on platforms where it's expected to work
@@ -606,7 +762,7 @@ Cwd 2.18  Thu Jun 24 08:22:57 CDT 2004
 Cwd 2.17  Wed Mar 10 07:55:36 CST 2004
 
  - The change in 2.16 created a testing failure when tested from
-   within a path that contains symlinks (for instance, /tmp ->
+   within a path that contains symlinks (for instance, /tmp -&gt;
    /private/tmp).
 
 Cwd 2.16  Sat Mar  6 17:56:31 CST 2004
@@ -623,7 +779,7 @@ Cwd 2.15  Fri Jan 16 08:09:44 CST 2004
 
 Cwd 2.14  Thu Jan  8 18:51:08 CST 2004
 
- - We now use File::Spec->canonpath() and properly-escaped regular
+ - We now use File::Spec-&gt;canonpath() and properly-escaped regular
    expressions when comparing paths in the regression tests.  This
    fixes some testing failures in 2.13 on non-Unix platforms.  No
    changes were made in the actual Cwd module code. [Steve Hay]
@@ -652,7 +808,7 @@ Cwd 2.10  Mon Dec 15 07:50:12 CST 2003
 
 Cwd 2.09  Thu Dec 11 20:30:58 CST 2003
 
- - The module should now build & install using version 5.6 of perl.
+ - The module should now build &amp; install using version 5.6 of perl.
 
  - We now note a build-time dependency on version 0.19 of
    Module::Build, which is necessary because we don't use the standard
@@ -739,7 +895,7 @@ File::Spec 0.85_02  Fri Sep 12 17:11:13 CDT 2003
    argument.  Previously the volume of the second argument was
    (usually) ignored, resulting in sometimes-garbage output.
 
- - catpath() on MacOS now looks for a volume element (i.e. "Macintosh HD:")
+ - catpath() on MacOS now looks for a volume element (i.e. &quot;Macintosh HD:&quot;)
    in its first argument, and then its second argument.  The first
    volume found will be used, and if none is found, none will be used.
 
@@ -775,13 +931,13 @@ File::Spec 0.85_01  Thu Sep 11 16:18:54 CDT 2003
 
  - Several canonpath() and catdir() bugs on Win32 have been fixed, and
    tests added for them:
-      catdir('/', '../')   -> '\\'     (was '\..')
-      catdir('/', '..\\')  -> '\\      (was '')
-      canonpath('\\../')   -> '\\'     (was '')
-      canonpath('\\..\\')  -> '\\'     (was '')
-      canonpath('/../')    -> '\\'     (was '\..')
-      canonpath('/..\\')   -> '\\'     (was '')
-      catdir('\\', 'foo')  -> '\foo'   (was '\\foo')
+      catdir('/', '../')   -&gt; '\\'     (was '\..')
+      catdir('/', '..\\')  -&gt; '\\      (was '')
+      canonpath('\\../')   -&gt; '\\'     (was '')
+      canonpath('\\..\\')  -&gt; '\\'     (was '')
+      canonpath('/../')    -&gt; '\\'     (was '\..')
+      canonpath('/..\\')   -&gt; '\\'     (was '')
+      catdir('\\', 'foo')  -&gt; '\foo'   (was '\\foo')
 
  - catpath($volume, $dirs, $file) on Mac OS now ignores any volume
    that might be part of $dirs, enabling catpath($volume,
@@ -790,24 +946,24 @@ File::Spec 0.85_01  Thu Sep 11 16:18:54 CDT 2003
 File::Spec 0.85  Tue Jul 22 11:31 CDT 2003
 
  A bug-fix release relative to 0.84.  I've forked development into a
- "stable" branch (this one) and a more aggressive branch (as yet
+ &quot;stable&quot; branch (this one) and a more aggressive branch (as yet
  unreleased), with an eye toward getting the stable features in perl
  5.8.1.
 
- - File::Spec::Mac->case_tolerant() returned 0 when it should have
+ - File::Spec::Mac-&gt;case_tolerant() returned 0 when it should have
    returned 1.
 
- - Many cases in File::Spec::Win32->abs2rel() were broken, because of
+ - Many cases in File::Spec::Win32-&gt;abs2rel() were broken, because of
    the way in which volumes were/weren't ignored.  Unfortunately, part
    of the regression tests were broken too.  Now, if the $path
    argument to abs2rel() is on a different volume than the $base
    argument, the result will be an absolute path rather than the
    broken relative path previous versions returned.
 
- - Fixed a problem in File::Spec::Win32->canonpath, which was turning
-   \../foo into "foo" rather than \foo
+ - Fixed a problem in File::Spec::Win32-&gt;canonpath, which was turning
+   \../foo into &quot;foo&quot; rather than \foo
 
- - Greatly simplified the code in File::Spec::Unix->splitdir().
+ - Greatly simplified the code in File::Spec::Unix-&gt;splitdir().
 
 File::Spec 0.84_01  Fri Jul 11 16:14:29 CDT 2003
 
@@ -849,7 +1005,7 @@ File::Spec 0.84  Wed Jul  9 22:21:23 CDT 2003
 
  - Several testing patches for the Epoc and Cygwin platforms [Tels]
 
- - When running under taint mode and perl >= 5.8, all the tmpdir()
+ - When running under taint mode and perl &gt;= 5.8, all the tmpdir()
    implementations now avoid returning a tainted path.
 
  - File::Spec::OS2 now implements canonpath(), splitpath(),
@@ -871,8 +1027,8 @@ File::Spec 0.84  Wed Jul  9 22:21:23 CDT 2003
  - abs2rel() on Win32 now explicitly ignores any volume component in
    the $path argument.
 
- - canonpath() on VMS now does []foo ==> foo, and foo.000000] ==> foo].
-   It also fixes a bug in multiple [000000.foo ==> [foo translations.
+ - canonpath() on VMS now does []foo ==&gt; foo, and foo.000000] ==&gt; foo].
+   It also fixes a bug in multiple [000000.foo ==&gt; [foo translations.
 
  - tmpdir() on VMS now uses 'sys$scratch:' instead of 'sys$scratch'.
 
@@ -880,11 +1036,72 @@ File::Spec 0.84  Wed Jul  9 22:21:23 CDT 2003
 
 File::Spec 0.82 Wed Jun 28 11:24:05 EDT 2000
    - Mac.pm: file_name_is_absolute( '' ) now returns TRUE on all platforms
-   - Spec.pm: unbreak C<$VERSION = '0.xx'> to be C<$VERSION = 0.xx>, so
+   - Spec.pm: unbreak C&lt;$VERSION = '0.xx'&gt; to be C&lt;$VERSION = 0.xx&gt;, so
      underscores can be used when I want to update CPAN without anyone
      needing to update the perl repository.
    - abs2rel, rel2abs doc tweaks
    - VMS.pm: get $path =~ /\s/ checks from perl repository.
-   - Makefile.PL: added INSTALLDIRS => 'perl', since these are std. modules.
-   - Remove vestigial context prototypes from &rel2abs until some future
+   - Makefile.PL: added INSTALLDIRS =&gt; 'perl', since these are std. modules.
+   - Remove vestigial context prototypes from &amp;rel2abs until some future
      arrives where method prototypes are honored.
+</pre>
+
+</div>
+
+<script type="text/javascript">
+
+//document.getElementById('source').style.visibility = 'hidden';
+//SyntaxHighlighter.all();
+$(document).ready(function() {
+
+togglePod([]);
+
+if(document.location.hash)
+    document.location.href = document.location.href;
+});
+</script>
+
+      </div>
+    </div>
+    <div class="hidden-phone">
+      <br><br><br>
+      <div class="row-fluid">
+        <div class="span2">&nbsp;</div>
+        <div class="span1" style="text-align: center">
+          <a href="https://github.com/CPAN-API/cpan-api/wiki/API-docs">API</a>
+        </div>
+        <div class="span2" style="text-align: center">
+          <a href="/about">About MetaCPAN</a>
+        </div>
+        <div class="span2" style="text-align: center">
+          <a href="/mirrors">CPAN Mirrors</a>
+        </div>
+        <div class="span2" style="text-align: center">
+          <a href="https://github.com/CPAN-API/metacpan-web">Fork metacpan.org</a>
+        </div>
+        <div class="span1" style="text-align: center">
+          <a href="http://Perl.org/">Perl.org</a>
+        </div>
+        <div class="span2" style="text-align: right; font-size: 0.7em; line-height: 1; color: #999">
+          Hosting generously<br>sponsored by <a href="http://www.bytemark.co.uk/r/metacpan.org/">Bytemark</a>
+          <br><br>
+          <a href="http://www.bytemark.co.uk/r/metacpan.org/" target="_blank">
+            <img src="/static/images/sponsors/bytemark_logo.png" width=179 height=14>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="visible-phone row-fluid">
+      <div class="span4"><a href="https://github.com/CPAN-API/cpan-api/wiki/Beta-API-docs">API</a></div>
+      <div class="span4 center"><a href="/about/resources">About</a></div>
+      <div class="span4" style="text-align: right; font-size: 0.7em; line-height: 1; color: #999">
+        Hosting generously<br>sponsored by <a href="http://www.bytemark.co.uk/r/metacpan.org/">Bytemark</a>
+        <br><br>
+        <a href="http://www.bytemark.co.uk/r/metacpan.org/" target="_blank">
+          <img src="/static/images/sponsors/bytemark_logo.png" width=100>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
