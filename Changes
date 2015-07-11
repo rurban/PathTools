@@ -1,5 +1,16 @@
 Revision history for Perl distribution PathTools.
 
+3.56_01 - Sat Jul 11 18:07:28 EDT 2015 - TRIAL RELEASE
+- CPAN release of the PathTools included in perl v5.22.0
+- support for z/OS sysplexed systems
+- long-deprecated "fixpath" and "eliminate_macros" VMS functions removed
+- avoid turning leading // into / on cygwin
+- Force barename base to be a directory in File::Spec::VMS:abs2rel
+- Revise Unix syntax detection File::Spec::VMS::abs2rel
+- compiles on Android now
+- fewer compiler warnings
+- eliminate some runtime perl warnings, too
+
 3.47 - Fri May 23 18:52:00 2014
 - Improved Android support.
 - File::Spec::Unix->tmpdir: Always return an absolute path
