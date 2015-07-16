@@ -1,5 +1,8 @@
 Revision history for Perl distribution PathTools.
 
+3.56_02 - Thu Jul 16 11:28:57 EDT 2015 - TRIAL RELEASE
+- fix $VERSION in loaded modules
+
 3.56_01 - Sat Jul 11 18:07:28 EDT 2015 - TRIAL RELEASE
 - CPAN release of the PathTools included in perl v5.22.0
 - support for z/OS sysplexed systems
