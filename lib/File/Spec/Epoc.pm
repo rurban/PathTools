@@ -3,7 +3,7 @@ package File::Spec::Epoc;
 use strict;
 use vars qw($VERSION @ISA);
 
-$VERSION = '3.56_02';
+$VERSION = '3.58_01';
 $VERSION =~ tr/_//d;
 
 require File::Spec::Unix;

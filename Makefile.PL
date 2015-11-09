@@ -14,14 +14,13 @@ WriteMakefile
           ),
           'PREREQ_PM' => {
                            'Carp' => '0',
-                           ($^O eq 'VMS' ? ('ExtUtils::MakeMaker' => 7.04) : ()),
                            'File::Basename' => '0',
                            'Scalar::Util' => '0',
                            'Test' => '0',
                            # done_testing() is used in dist/Cwd/t/Spec.t
                            'Test::More' => 0.88,
                          },
-          'INSTALLDIRS' => 'perl',
+          ($] > 5.011) ? () : ( INSTALLDIRS => 'perl' ), # CPAN sourced versions should now install to site
           'EXE_FILES' => [],
           'PL_FILES' => {}
         )
