@@ -1,5 +1,12 @@
 Revision history for Perl distribution PathTools.
 
+3.59 - Fri Nov 13 18:38:01 EST 2015
+- no changes since 5.56
+
+3.58_01 - Mon Nov  9 17:35:28 EST 2015 - TRIAL RELEASE
+- add File::Spec::AmigaOS
+- fix INSTALLDIRS on post-5.10 perls
+
 3.56_02 - Thu Jul 16 11:28:57 EDT 2015 - TRIAL RELEASE
 - fix $VERSION in loaded modules
 
