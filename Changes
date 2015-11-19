@@ -1,7 +1,10 @@
 Revision history for Perl distribution PathTools.
 
+3.60 - Wed Nov 18 21:28:01 EST 2015
+- add File::Spec::AmigaOS -- and actually ship it, this time
+
 3.59 - Fri Nov 13 18:38:01 EST 2015
-- no changes since 5.56
+- no changes since 5.58_01
 
 3.58_01 - Mon Nov  9 17:35:28 EST 2015 - TRIAL RELEASE
 - add File::Spec::AmigaOS
