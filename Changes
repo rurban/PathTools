@@ -1,5 +1,11 @@
 Revision history for Perl distribution PathTools.
 
+3.62 - Mon Jan 11 08:39:19 EST 2016
+- ensure File::Spec::canonpath() preserves taint (CVE-2015-8607)
+
+3.61 - Sun Dec 20 12:00:00 EST 2015 (bleadperl only release)
+- improve performance of cwd on Win32 miniperl
+
 3.60 - Wed Nov 18 21:28:01 EST 2015
 - add File::Spec::AmigaOS -- and actually ship it, this time
 
