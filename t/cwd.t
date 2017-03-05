@@ -37,10 +37,10 @@ if ($IsVMS) {
     $vms_mode = 0 if ($vms_unix_rpt);
 }
 
-my $tests = 31;
+my $tests = 30;
 # _perl_abs_path() currently only works when the directory separator
 # is '/', so don't test it when it won't work.
-my $EXTRA_ABSPATH_TESTS = ($Config{prefix} =~ m/\//) && $^O ne 'cygwin';
+my int $EXTRA_ABSPATH_TESTS = ($Config{prefix} =~ m/\//) && $^O ne 'cygwin';
 $tests += 4 if $EXTRA_ABSPATH_TESTS;
 plan tests => $tests;
 
@@ -149,12 +149,13 @@ foreach my $func (qw(cwd getcwd fastcwd fastgetcwd)) {
   dir_ends_with( $result, $Test_Dir, "$func()" );
 }
 
-{
+#{
   # Some versions of File::Path (e.g. that shipped with perl 5.8.5)
   # call getcwd() with an argument (perhaps by calling it as a
   # method?), so make sure that doesn't die.
-  is getcwd(), getcwd('foo'), "Call getcwd() with an argument";
-}
+  # This is now with signatures deprecated.
+  #is getcwd(), getcwd('foo'), "Call getcwd() with an argument";
+#}
 
 # Cwd::chdir should also update $ENV{PWD}
 dir_ends_with( $ENV{PWD}, $Test_Dir, 'Cwd::chdir() updates $ENV{PWD}' );
@@ -184,7 +185,7 @@ rmtree($test_dirs[0], 0, 0);
 }
 
 SKIP: {
-    skip "no symlinks on this platform", 2+$EXTRA_ABSPATH_TESTS unless $Config{d_symlink} && $^O !~ m!^(qnx|nto)!;
+    skip "no symlinks on this platform", int(2+$EXTRA_ABSPATH_TESTS) unless $Config{d_symlink} && $^O !~ m!^(qnx|nto)!;
 
     my $file = "linktest";
     mkpath([$Test_Dir], 0, 0777);
@@ -233,11 +234,11 @@ SKIP: {
   {
     my $root = Cwd::abs_path(File::Spec->rootdir);	# Add drive letter?
     local *FH;
-    opendir FH, $root or skip("Can't opendir($root): $!", 2+$EXTRA_ABSPATH_TESTS);
+    opendir FH, $root or skip("Can't opendir($root): $!", int(2+$EXTRA_ABSPATH_TESTS));
     ($file) = grep {-f $_ and not -l $_} map File::Spec->catfile($root, $_), readdir FH;
     closedir FH;
   }
-  skip "No plain file in root directory to test with", 2+$EXTRA_ABSPATH_TESTS unless $file;
+  skip "No plain file in root directory to test with", int(2+$EXTRA_ABSPATH_TESTS) unless $file;
   
   $file = VMS::Filespec::rmsexpand($file) if $^O eq 'VMS';
   is Cwd::abs_path($file), $file, 'abs_path() works on files in the root directory';
@@ -248,8 +249,8 @@ SKIP: {
 
 SKIP: {
   my $dir = "${$}a\nx";
-  mkdir $dir or skip "OS does not support dir names containing LF";
-  chdir $dir or skip "OS cannot chdir into LF";
+  mkdir $dir or skip "OS does not support dir names containing LF", 1;
+  chdir $dir or skip "OS cannot chdir into LF", 1;
   eval { Cwd::fast_abs_path() };
   is $@, "", 'fast_abs_path does not die in dir whose name contains LF';
   chdir File::Spec->updir;

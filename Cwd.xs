@@ -562,16 +562,19 @@ CODE:
 
 #endif
 
+PROTOTYPES: ENABLE
+
+# File::Path in 5.8.5 allowed an arg (as method). This is now deprecated
 void
-getcwd(...)
+getcwd()
+PROTOTYPE:
 ALIAS:
     fastcwd=1
+PREINIT:
+    PERL_UNUSED_ARG(ix);
 PPCODE:
 {
     dXSTARG;
-    /* fastcwd takes zero parameters:  */
-    if (ix == 1 && items != 0)
-	croak_xs_usage(cv,  "");
     getcwd_sv(TARG);
     XSprePUSH; PUSHTARG;
     SvTAINTED_on(TARG);
@@ -580,6 +583,7 @@ PPCODE:
 void
 abs_path(pathsv=Nullsv)
     SV *pathsv
+PROTOTYPE: ;$
 PPCODE:
 {
     dXSTARG;
@@ -608,7 +612,7 @@ PPCODE:
 
 void
 getdcwd(...)
-PROTOTYPE: ENABLE
+PROTOTYPE: ;$
 PPCODE:
 {
     dXSTARG;

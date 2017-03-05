@@ -27,6 +27,7 @@ symlink $real_dir, $symlink or die "Can't symlink $real_dir => $symlink: $!";
 END { unlink $symlink }
 
 chdir $symlink or die "Can't chdir into $symlink: $!";
+push @INC, '../../../lib' if $ENV{PERL_CORE};
 
 TODO: {
   local $TODO = 'Need to find a way to make cwd work reliably under symlinks"';
