@@ -20,10 +20,6 @@ t/abs2rel.t
 t/crossplatform.t
 t/cwd.t
 t/Functions.t
-t/lib/Test/Builder.pm
-t/lib/Test/More.pm
-t/lib/Test/Simple.pm
-t/lib/Test/Tutorial.pod
 t/rel2abs2rel.t
 t/rel2abs_vs_symlink.t
 t/Spec-taint.t
